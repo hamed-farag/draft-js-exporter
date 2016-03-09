@@ -15,7 +15,7 @@ It automatically wraps the block inside a `p` element if the `type` of the block
 # Usage
 
 ````
-  import DraftExporter from 'draft-js-exporter';
+  var DraftExporter = require('draft-js-exporter');
   
   
   var rawDraftContentBlock = Draft.convertToRaw(contentState);
