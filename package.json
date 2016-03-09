@@ -1,8 +1,8 @@
 {
-  "name": "draftjs-exporter",
+  "name": "draft-js-exporter",
   "version": "0.0.1",
-  "description": "",
-  "main": "script.js",
+  "description": "A module to export and format the content from the React Draft.js framework.",
+  "main": "main.js",
   "scripts": {
     "build": "babel src -d lib",
     "test": "npm run build && node lib/test.js"
@@ -11,12 +11,8 @@
     "draftjs"
   ],
   "license": "MIT",
-  "dependencies": {
-    "lodash": "^4.5.1"
-  },
   "devDependencies": {
     "babel-cli": "^6.6.5",
-    "expect": "^1.14.0"
   },
   "babel": {
     "presets": ["es2015"]
