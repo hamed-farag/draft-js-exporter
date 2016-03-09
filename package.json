@@ -1,0 +1,24 @@
+{
+  "name": "draftjs-exporter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "npm run build && node lib/test.js"
+  },
+  "keywords": [
+    "draftjs"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.5.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "expect": "^1.14.0"
+  },
+  "babel": {
+    "presets": ["es2015"]
+  }
+}
