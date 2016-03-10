@@ -21,7 +21,7 @@ class DraftExporter {
   checkStylesBefore(index){
     let text = "";
     this.offsets.map((offset) => {
-      if(index == offset.start) text += this.formatter[offset.style].open;
+      if(index == offset.start && this.formatter[offset.style] != null) text += this.formatter[offset.style].open;
     });
     return text;
   }
@@ -29,7 +29,7 @@ class DraftExporter {
   checkStylesAfter(index){
     let text = "";
     this.offsets.map((offset) => {
-      if(index == offset.end) text += this.formatter[offset.style].close;
+      if(index == offset.end && this.formatter[offset.style] != null) text += this.formatter[offset.style].close;
     });
     return text;
   }
