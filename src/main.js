@@ -1,11 +1,12 @@
-import * as FORMATS from './formats';
+const FORMATS = require('./formats.json');
 
 class DraftExporter {
 
   constructor(rawData){
     this.rawData = rawData;
     this.offsets = [];
-    this.formatter = FORMATS.HTML_FORMAT;
+    this.formatter = FORMATS.HTML;
+    console.log(this.formatter);
   }
 
   defineOffsets(inlineStyles){
@@ -19,17 +20,19 @@ class DraftExporter {
   }
 
   checkStylesBefore(index){
+    let formatter = this.formatter['INLINE'];
     let text = "";
     this.offsets.map((offset) => {
-      if(index == offset.start && this.formatter[offset.style] != null) text += this.formatter[offset.style].open;
+      if(index == offset.start && formatter[offset.style] != null) text += formatter[offset.style].open;
     });
     return text;
   }
 
   checkStylesAfter(index){
+    let formatter = this.formatter['INLINE'];
     let text = "";
     this.offsets.map((offset) => {
-      if(index == offset.end && this.formatter[offset.style] != null) text += this.formatter[offset.style].close;
+      if(index == offset.end && formatter[offset.style] != null) text += formatter[offset.style].close;
     });
     return text;
   }
@@ -39,13 +42,13 @@ class DraftExporter {
     let exportText = "";
     blocks.map((block) => {
       this.defineOffsets(block.inlineStyleRanges);
-      exportText += this.formatter[block.type].open;
+      exportText += this.formatter['BLOCK'][block.type].open;
       for(let i = 0; i < block.text.length; i++){
         exportText += this.checkStylesBefore(i);
         exportText += block.text.charAt(i);
         exportText += this.checkStylesAfter(i + 1);
       }
-      exportText += this.formatter[block.type].close;
+      exportText += this.formatter['BLOCK'][block.type].close;
     });
     return exportText;
   }

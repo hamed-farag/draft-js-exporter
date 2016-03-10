@@ -1,20 +1,20 @@
 {
   "name": "draft-js-exporter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A module to export and format the content from the React Draft.js framework.",
   "main": "lib/main.js",
   "repository": "rkpasia/draft-js-exporter",
   "scripts": {
     "build": "babel src -d lib",
-    "test": "npm run build && node lib/test.js"
+    "test": "npm run build && node lib/test.js",
+    "pub": "babel src -d lib && npm publish"
   },
   "keywords": [
     "draftjs"
   ],
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.6.5",
-    "draft-js-exporter": "^0.0.1"
+    "babel-cli": "^6.6.5"
   },
   "babel": {
     "presets": ["es2015"]
