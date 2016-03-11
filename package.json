@@ -1,6 +1,6 @@
 {
   "name": "draft-js-exporter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A module to export and format the content from the React Draft.js framework.",
   "main": "lib/main.js",
   "repository": "rkpasia/draft-js-exporter",
@@ -17,6 +17,10 @@
     "babel-cli": "^6.6.5"
   },
   "babel": {
-    "presets": ["es2015"]
-  }
+    "presets": [
+      "es2015"
+    ]
+  },
+  "dependencies": {
+    "draft-js-export-html": "^0.1.4"
 }
