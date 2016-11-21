@@ -6,7 +6,6 @@ class DraftExporter {
     this.rawData = rawData;
     this.offsets = [];
     this.formatter = FORMATS.HTML;
-    console.log(this.formatter);
   }
 
   defineOffsets(inlineStyles){
