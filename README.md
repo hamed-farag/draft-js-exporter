@@ -9,6 +9,27 @@ The goal is to provide a modular structure to select the format to export.
 Actually there is an early HTML formatter that support `BOLD` and `ITALIC` inline styles.
 It automatically wraps the block inside a `p` element if the `type` of the block is `unstyled`.
 
+# Supported Tags
+
+````
+"BLOCK": {
+      "unstyled": {
+        "open": "<p>",
+        "close": "</p>"
+      }
+    },
+    "INLINE": {
+      "BOLD": {
+        "open": "<strong>",
+        "close": "</strong>"
+      },
+      "ITALIC": {
+        "open": "<em>",
+        "close": "</em>"
+      }
+    }
+````
+
 # Install 
 `npm i draft-js-exporter`
 
