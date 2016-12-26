@@ -12,7 +12,7 @@ It automatically wraps the block inside a `p` element if the `type` of the block
 # Supported Tags
 
 ````
-"BLOCK": {
+    "BLOCK": {
       "unstyled": {
         "open": "<p>",
         "close": "</p>"
